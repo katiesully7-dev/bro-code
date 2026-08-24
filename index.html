@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BroChat Private Vault</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- STATE MANAGEMENT (Checkbox Hacks) -->
+  <input type="checkbox" id="vault-unlock" class="state-toggle">
+  <input type="checkbox" id="soundboard-toggle" class="state-toggle">
+  <input type="checkbox" id="gif-toggle" class="state-toggle">
+
+  <!-- THE BRO CODE VAULT (Initial Screen) -->
+  <div class="vault-screen">
+    <div class="vault-container">
+      <h2>🔒 The Vault</h2>
+      <p>Enter the secret handshake to continue.</p>
+      <div class="emoji-keypad">
+        <button class="key">🦍</button>
+        <button class="key">🔥</button>
+        <button class="key">🍻</button>
+        <button class="key">💀</button>
+        <button class="key">🍕</button>
+        <button class="key">🎮</button>
+        <button class="key">💯</button>
+        <button class="key">🚀</button>
+        <!-- The correct combination is visually simulated by clicking the checkmark to unlock -->
+        <label for="vault-unlock" class="key unlock-btn">✔️</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="app-layout">
+    
+    <!-- PURE CSS SOUNDBOARD (Slide-out Sidebar) -->
+    <aside class="soundboard">
+      <div class="soundboard-header">
+        <h3>🎛️ Soundboard</h3>
+        <label for="soundboard-toggle" class="close-btn">✖</label>
+      </div>
+      <div class="sound-buttons">
+        <button class="sound-btn">Bruh 🔊</button>
+        <button class="sound-btn">Airhorn 🚨</button>
+        <button class="sound-btn">Crickets 🦗</button>
+        <button class="sound-btn">Vine Boom 💥</button>
+        <button class="sound-btn">Sad Trombone 🎺</button>
+      </div>
+    </aside>
+
+    <!-- CHAT INTERFACE -->
+    <main class="chat-main">
+      
+      <!-- HEADER -->
+      <header class="chat-header">
+        <div class="header-left">
+          <label for="soundboard-toggle" class="toggle-icon">🎛️</label>
+          <div class="chat-title">
+            <h1>The Inner Circle</h1>
+            <span class="status">🟢 4 Bros Online</span>
+          </div>
+        </div>
+        
+        <!-- INSIDE JOKE PING BUTTON -->
+        <button class="ping-btn">
+          <span class="ping-text"></span>
+        </button>
+      </header>
+
+      <!-- CHAT FEED -->
+      <div class="chat-feed">
+        <div class="message received">
+          <div class="avatar">🦍</div>
+          <div class="bubble">Yoo, who's hopping on tonight?</div>
+        </div>
+
+        <div class="message sent">
+          <div class="bubble">I'm down in 20. Just finishing up some work.</div>
+        </div>
+
+        <!-- MEDIA SHARING RENDER -->
+        <div class="message received">
+          <div class="avatar">💀</div>
+          <div class="bubble media-bubble">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming Setup" class="shared-image">
+            <p>Setup is ready to go 🔥</p>
+          </div>
+        </div>
+
+        <!-- GHOST MODE MESSAGE -->
+        <div class="message sent ghost-message">
+          <div class="bubble ghost-bubble">
+            👻 This message will self-destruct in 5 seconds... don't screenshot!
+          </div>
+        </div>
+      </div>
+
+      <!-- DRAG AND DROP ZONE -->
+      <div class="drop-zone">
+        <p>📥 Drop files here to share with the bros</p>
+      </div>
+
+      <!-- QUICK ACTION BAR -->
+      <footer class="chat-footer">
+        <label for="gif-toggle" class="action-btn">GIF</label>
+        <button class="action-btn attach-btn">📎</button>
+        
+        <input type="text" placeholder="Type some nonsense..." class="chat-input">
+        
+        <div class="reaction-buttons">
+          <button class="btn-fire">🔥</button>
+          <button class="btn-finger">🖕</button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- GIPHY MODAL (CSS Grid) -->
+    <div class="gif-modal">
+      <div class="gif-modal-content">
+        <div class="gif-header">
+          <h3>Select a GIF</h3>
+          <label for="gif-toggle" class="close-btn">✖</label>
+        </div>
+        <div class="gif-grid">
+          <div class="gif-item" style="background: url('https://media.giphy.com/media/VIOkcgpsnA2Zy/giphy.gif') center/cover;"></div>
+          <div class="gif-item" style="background: url('https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif') center/cover;"></div>
+          <div class="gif-item" style="background: url('https://media.giphy.com/media/l41YmQjOz9qg2Ecow/giphy.gif') center/cover;"></div>
+          <div class="gif-item" style="background: url('https://media.giphy.com/media/26AHONQ79FdWZhAIw/giphy.gif') center/cover;"></div>
+          <div class="gif-item" style="background: url('https://media.giphy.com/media/xT0xeJpnrWC4XWblWQ/giphy.gif') center/cover;"></div>
+          <div class="gif-item" style="background: url('https://media.giphy.com/media/l0HlOBZcl7sbV6VgO/giphy.gif') center/cover;"></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
